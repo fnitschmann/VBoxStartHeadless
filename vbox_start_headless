@@ -13,12 +13,10 @@ function vbox_vm_list() {
 }
 
 function start_vm_headless() {
-  # VBoxManage startvm $vm --type headless
   vbox_vm_headless_start=$(VBoxManage startvm $1 --type headless)
   echo $vbox_vm_list
 }
 
-# check if VirtualBox is installed
 if is_vbox_installed $1; then
   if [ "$1" != "" ]; then
     vm_name=$1
